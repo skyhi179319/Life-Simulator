@@ -1,0 +1,36 @@
+package Assets;
+import java.math.BigDecimal;
+public class Salary{
+	public static BigDecimal DrugDealer = Jobs.Crime.Local.DrugDealer.Salary;
+	public static BigDecimal Robber = Jobs.Crime.Local.Robber.Salary;
+	public static BigDecimal Patrolman = Jobs.Emergency.Police.Patrolman.Salary;
+	public static BigDecimal PoliceSergeant = Jobs.Emergency.Police.Sergeant.Salary;
+	public static BigDecimal PoliceLieutenant = Jobs.Emergency.Police.Lieutenant.Salary;
+	public static BigDecimal PoliceAssistCheif = Jobs.Emergency.Police.AssistantCheif.Salary;
+	public static BigDecimal PoliceCheif = Jobs.Emergency.Police.Cheif.Salary;
+	public static BigDecimal FireProbation = Jobs.Emergency.Fire.Probation.Salary;
+	public static BigDecimal FireFighter = Jobs.Emergency.Fire.Firefighter.Salary;
+	public static BigDecimal FireLieutenant = Jobs.Emergency.Fire.Lieutenant.Salary;
+	public static BigDecimal BattalionCheif = Jobs.Emergency.Fire.BattalionChief.Salary;
+	public static BigDecimal FireAssistCheif = Jobs.Emergency.Fire.AssistantCheif.Salary;
+	public static BigDecimal FireCheif = Jobs.Emergency.Fire.Cheif.Salary;
+	public static BigDecimal Nurse = Jobs.Emergency.Hospital.Nurse.Salary;
+	public static BigDecimal Surgeon = Jobs.Emergency.Hospital.Surgeon.Salary;
+	public static BigDecimal Doctor = Jobs.Emergency.Hospital.Doctor.Salary;
+	public static BigDecimal Football = Jobs.Sports.Football.Salary;
+	public static BigDecimal Basketball = Jobs.Sports.Basketball.Salary;
+	public static BigDecimal Baseball = Jobs.Sports.Baseball.Salary;
+	public static BigDecimal Elementary = Jobs.Teaching.Elementary.Salary;
+	public static BigDecimal Middleschool = Jobs.Teaching.MiddleSchool.Salary;
+	public static BigDecimal Highschool = Jobs.Teaching.HighSchool.Salary;
+	public static BigDecimal CollegeProfessor = Jobs.Teaching.College.Professor.Salary;
+	public static BigDecimal CollegeAdjuct = Jobs.Teaching.College.Adjuct.Salary;
+	public static BigDecimal CollegeDean = Jobs.Teaching.College.Dean.Salary;
+	public static BigDecimal Governor = Jobs.Government.Governor.Salary;
+	public static BigDecimal President = Jobs.Government.Presidemt.Salary;
+	public static BigDecimal FastFood = Jobs.NonDegree.FastFood.Salary;
+	public static BigDecimal GroceryStore = Jobs.NonDegree.GroceryStore.Salary;
+	public static BigDecimal Programmer = Jobs.Degree.Programmer.Salary;
+	public static BigDecimal Pastor = Jobs.Degree.Pastor.Salary;
+	public static BigDecimal Scientist = Jobs.Degree.Scientist.Salary;
+}
