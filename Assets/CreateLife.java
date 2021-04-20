@@ -3,9 +3,9 @@ import java.math.BigDecimal;
 
 
 public class CreateLife {
-	public static void CreateCurrent(String Firstname,String Lastname) {
-		Life.NewPlayer Player = new Life.NewPlayer(Firstname, Lastname);
-		new Life.CurrentPlayer(Player.Firstname,Player.Lastname,0);
+	public static void CreateCurrent(String Firstname,String Lastname,String Sex) {
+		Life.NewPlayer Player = new Life.NewPlayer(Firstname, Lastname,Sex);
+		new Life.CurrentPlayer(Player.Firstname,Player.Lastname,0,Player.Sex);
 	}
 	public static String pickMomJob(int Age,String Person){
 		return Traits.Functions.pickParentsJob(Age,Person);
@@ -24,9 +24,9 @@ public class CreateLife {
 		new Dating.CurrentDate(Date.Firstname, Date.Lastname, Life.CurrentPlayer.Age);
 		Dating.CurrentDate.Job = Traits.Functions.pickDateJob(Dating.CurrentDate.Age, "Mom");
 	}
-	public static void CreateSimChild(String Firstname,String Lastname) {
-		Life.NewPlayer Player = new Life.NewPlayer(Firstname,Life.CurrentPlayer.Lastname);
-		new Life.simChild(Player.Firstname, Player.Lastname);
+	public static void CreateSimChild(String Firstname,String Lastname,String Sex) {
+		Life.NewPlayer Player = new Life.NewPlayer(Firstname,Life.CurrentPlayer.Lastname,Sex);
+		new Life.simChild(Player.Firstname, Player.Lastname,Player.Sex);
 	}
 	public static void CreateChild(String Firstname) {
 		Life.CurrentPlayer.Firstname = Firstname;

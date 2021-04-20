@@ -3,14 +3,27 @@ package Assets;
 public class Dating {
 	public static  class pickDate{
 		public static String[] Name() {
-			String Firstname = Life.Names.Girls.pickFirstname();
-			String Lastname = Life.Names.Girls.pickLastname();
-			String[] Name = {Firstname,Lastname};
-			if(Lastname == Life.CurrentPlayer.Lastname) {
-				return Name();
+			if(Life.CurrentPlayer.Sex.equals("Male")) {
+				String Firstname = Life.Names.Girls.pickFirstname();
+				String Lastname = Life.Names.Girls.pickLastname();
+				String[] Name = {Firstname,Lastname};
+				if(Lastname == Life.CurrentPlayer.Lastname) {
+					return Name();
+				}
+				else {
+					return Name;
+				}
 			}
 			else {
-				return Name;
+				String Firstname = Life.Names.Boys.pickFirstname();
+				String Lastname = Life.Names.Boys.pickLastname();
+				String[] Name = {Firstname,Lastname};
+				if(Lastname == Life.CurrentPlayer.Lastname) {
+					return Name();
+				}
+				else {
+					return Name;
+				}
 			}
 		}
 	}
