@@ -99,21 +99,30 @@ public class Program {
 	    JTextField FirstnameTextfield = new JTextField(10);
 	    JLabel Lastname = new JLabel("Lastname");
 	    JTextField LastnameTextfield = new JTextField(10);
+	    JRadioButton male = new JRadioButton("Male");
+	    JRadioButton female = new JRadioButton("Female");
 	    JButton Create = new JButton("Create");
 	    if(Life.CurrentPlayer.hasChild == false) {
 	    	NewUser.add(Firstname);
 		    NewUser.add(FirstnameTextfield);
 		    NewUser.add(Lastname);
 		    NewUser.add(LastnameTextfield);
+		    NewUser.add(male);
+		    NewUser.add(female);
 		    Create.addMouseListener(new MouseAdapter() {
-		   	 @Override
-		        public void mouseClicked(MouseEvent e) {
-		           CreateLife.CreateCurrent(FirstnameTextfield.getText(), LastnameTextfield.getText());
-		           UserInfo.setText(Life.CurrentPlayer.Firstname + " " + Life.CurrentPlayer.Lastname + " " + Life.CurrentPlayer.Age);
-		           User.dispose();
+		    	@Override
+			    public void mouseClicked(MouseEvent e) {
+			   		if(male.isSelected() == true) {
+			   			 CreateLife.CreateCurrent(FirstnameTextfield.getText(), LastnameTextfield.getText(),"Male");
+			   		}
+			   		if(female.isSelected() == true) {
+			   			 CreateLife.CreateCurrent(FirstnameTextfield.getText(), LastnameTextfield.getText(),"Female");
+			   		}
+		            UserInfo.setText(Life.CurrentPlayer.Firstname + " " + Life.CurrentPlayer.Lastname + " " + Life.CurrentPlayer.Age);
+		            User.dispose();
 		            Parents();
 		            HealthBars();
-		   	 }
+			   	}
 		    });
 		    NewUser.add(Create);
 	    }
@@ -300,8 +309,10 @@ public class Program {
 	    	    	    	    JButton Football = new JButton("Football");
 	    	    	    	    Football.addMouseListener(new MouseAdapter() {
 	    	    	    	    	public void mouseClicked(MouseEvent e) {
-	    	    	    	    		Life.CurrentPlayer.Activities.clear();
-	    	    	    	    		Life.CurrentPlayer.Activities.add("Football");
+	    	    	    	    		if(Life.CurrentPlayer.Sex.equals(Assets.Restrictions.Jobs.Football)) {
+	    	    	    	    			Life.CurrentPlayer.Activities.clear();
+	    	    	    	    			Life.CurrentPlayer.Activities.add("Football");
+	    	    	    	    		}	    	    	    
 	    	    	    	    	}
 	    	    	    	    });
 	    	    	    	    SportsActions.add(Football);
@@ -666,13 +677,23 @@ public class Program {
 	    				         User.getContentPane().add(NewUser, BorderLayout.CENTER);
 	    				         JLabel Firstname = new JLabel("Firstname");
 	    				         JTextField FirstnameTextfield = new JTextField(10);
+	    				         JRadioButton male = new JRadioButton("Male");
+	    				 	     JRadioButton female = new JRadioButton("Female");
+	    				 	     NewUser.add(male);
+	    				 	     NewUser.add(female);
 	    				         JButton Create = new JButton("Create");
 	    				         NewUser.add(Firstname);
 	    				         NewUser.add(FirstnameTextfield);
 	    				         Create.addMouseListener(new MouseAdapter() {
 	    				        	 @Override
 	    				             public void mouseClicked(MouseEvent e) {
-	    				                CreateLife.CreateSimChild(FirstnameTextfield.getText(),Life.CurrentPlayer.Lastname);
+	    				        		if(male.isSelected() == true) {
+	    						   			CreateLife.CreateSimChild(FirstnameTextfield.getText(),Life.CurrentPlayer.Lastname,"Male");
+	    						   		}
+	    						   		if(female.isSelected() == true) {
+	    						   			CreateLife.CreateSimChild(FirstnameTextfield.getText(),Life.CurrentPlayer.Lastname,"Female");
+	    						   		}
+	    				                
 	    				                Life.CurrentPlayer.OnlyChildName = Life.simChild.Firstname + " " + Life.CurrentPlayer.Lastname;
 	    				                Assets.Dating.CurrentDate.OnlyChild = Life.simChild.Firstname + " " + Life.CurrentPlayer.Lastname;
 	    				                Life.CurrentPlayer.hasChild = true;
