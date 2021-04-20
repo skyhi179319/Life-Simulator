@@ -67,10 +67,12 @@ public class Life {
 		public static String Firstname;
 		public static String Lastname;
 		public static int Age;
-		public CurrentPlayer(String firstname,String lastname,int age) {
+		public static String Sex;
+		public CurrentPlayer(String firstname,String lastname,int age,String sex) {
 			Firstname = firstname;
 			Lastname = lastname;
 			Age = age;
+			Sex = sex;
 		}
 		public static String SchoolStatus = "";
 		public static String SportsStatus = "";
@@ -117,9 +119,11 @@ public class Life {
 	public static class simChild{
 		public static String Firstname;
 		public static String Lastname;
-		public simChild(String firstname,String lastname) {
+		public static String Sex;
+		public simChild(String firstname,String lastname,String sex) {
 			Firstname = firstname;
 			Lastname = lastname;
+			Sex = sex;
 		}
 	}
 	public static class OldLife{
@@ -129,9 +133,11 @@ public class Life {
 	public static class NewPlayer{
 		public static String Firstname;
 		public static String Lastname;
-		public NewPlayer(String firstname,String lastname) {
+		public static String Sex;
+		public NewPlayer(String firstname,String lastname,String sex) {
 			Firstname = firstname;
 			Lastname = lastname;
+			Sex = sex;
 		}
 	}
 }

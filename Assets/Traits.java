@@ -231,6 +231,7 @@ public class Traits {
 		}
 		public static void resetUser() {
 			Life.CurrentPlayer.Age = 0;
+			Life.CurrentPlayer.Sex = "";
 			Life.CurrentPlayer.Activities.clear();
 			Life.CurrentPlayer.CaughtInCrime = false;
 			Life.CurrentPlayer.College.clear();
